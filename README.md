@@ -5,14 +5,14 @@
 <h1 align="center">sla-slo-templates</h1>
 
 <p align="center">
-  <strong>EN</strong> SLA, SLO, and error-budget documentation templates<br/>
-  <strong>PT</strong> Templates de documentação SLA, SLO e error budget
+  <strong>EN</strong> Templates for Service Level Agreements and Objectives<br/>
+  <strong>PT</strong> Templates para Acordos e Objetivos de Nível de Serviço
 </p>
 
 <p align="center">
   <a href="https://github.com/manansbdb/sla-slo-templates/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge" alt="MIT" /></a>
   <img src="https://img.shields.io/badge/lang-EN%20%7C%20PT-3b82f6?style=for-the-badge" alt="EN PT" />
-  <img src="https://img.shields.io/badge/SLO-14b8a6?style=for-the-badge" alt="SLO" />
+  <img src="https://img.shields.io/badge/SRE-8b5cf6?style=for-the-badge" alt="SRE" />
   <a href="#support--apoio"><img src="https://img.shields.io/badge/donate-BTC-f59e0b?style=for-the-badge" alt="Donate BTC" /></a>
 </p>
 
@@ -22,18 +22,20 @@
 
 | English | Português |
 |---------|-----------|
-| Markdown templates for **SLA**, **SLO**, and **error budget** docs. | Templates Markdown para docs de **SLA**, **SLO** e **error budget**. |
-| Fill with your service targets and review cadence. | Preenche com os targets do serviço e a cadência de review. |
+| Templates for Service Level Agreements and Objectives. | Templates para Acordos e Objetivos de Nível de Serviço. |
+| Free templates/checklists you copy into your own docs — no paid services. | Templates/checklists gratuitos para copiares — sem serviços pagos. |
 
 ```mermaid
 flowchart LR
-  A["🎯 SLO.md"] --> B["📉 error-budget.md"]
-  B --> C["📜 SLA.md"]
-  C --> D["🤝 Shared expectations"]
-  style A fill:#14b8a6,stroke:#0f766e,color:#fff
-  style B fill:#f59e0b,stroke:#b45309,color:#fff
-  style C fill:#0ea5e9,stroke:#0369a1,color:#fff
-  style D fill:#6366f1,stroke:#4338ca,color:#fff
+  A["🎯 SLO"] --> B["📜 SLA"]
+  A --> C["📉 Error budget"]
+  B --> D["🤝 Customer promise"]
+  C --> E["🧭 Release / pause"]
+  style A fill:#8b5cf6,stroke:#6d28d9,color:#fff
+  style B fill:#3b82f6,stroke:#1d4ed8,color:#fff
+  style C fill:#f59e0b,stroke:#b45309,color:#fff
+  style D fill:#0ea5e9,stroke:#0369a1,color:#fff
+  style E fill:#22c55e,stroke:#15803d,color:#fff
 ```
 
 ---
@@ -47,13 +49,12 @@ git clone https://github.com/manansbdb/sla-slo-templates.git
 cd sla-slo-templates
 ```
 
-### 2) Apply / Aplica
+### 2) Copy templates / Copia os templates
 
 ```bash
-mkdir -p /path/to/your-project/docs/sre
-cp templates/SLA.md /path/to/your-project/docs/sre/
-cp templates/SLO.md /path/to/your-project/docs/sre/
-cp templates/error-budget.md /path/to/your-project/docs/sre/
+cp templates/SLO.md /path/to/your-docs/SLO.md
+cp templates/SLA.md /path/to/your-docs/SLA.md
+cp templates/error-budget.md /path/to/your-docs/error-budget.md
 ```
 
 ### Requirements / Requisitos
@@ -67,7 +68,8 @@ cp templates/error-budget.md /path/to/your-project/docs/sre/
 
 ```bash
 git clone https://github.com/manansbdb/sla-slo-templates.git
-cp sla-slo-templates/templates/SLO.md ./docs/sre/SLO.md
+cd sla-slo-templates
+cp templates/SLO.md ./SLO.md
 ```
 
 ---
@@ -76,9 +78,9 @@ cp sla-slo-templates/templates/SLO.md ./docs/sre/SLO.md
 
 | Path | Purpose / Função |
 |------|------------------|
-| `templates/SLA.md` | Service level agreement |
-| `templates/SLO.md` | Service level objectives |
-| `templates/error-budget.md` | Error budget policy |
+| `templates/SLO.md` | SLO definition / Definição de SLO |
+| `templates/SLA.md` | Customer-facing SLA / SLA para clientes |
+| `templates/error-budget.md` | Error budget policy / Política de error budget |
 | `SUPPORT.md` | Donations / Doações |
 
 ---
@@ -88,8 +90,8 @@ cp sla-slo-templates/templates/SLO.md ./docs/sre/SLO.md
 ```text
 sla-slo-templates/
 ├── docs/banner.svg
-├── templates/SLA.md
 ├── templates/SLO.md
+├── templates/SLA.md
 ├── templates/error-budget.md
 ├── SUPPORT.md
 └── README.md
